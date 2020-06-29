@@ -49,11 +49,11 @@ binary-linux-amd64:
 # 	go build -o bin/$(GOOS)/$(GOARCH)/$(BIN_NAME) -v
 
 # docker doesn't currently support arm architecture
-# binary-linux-arm: export GOOS=linux
-# binary-linux-arm: export GOARCH=arm
-# binary-linux-arm: export GO15VENDOREXPERIMENT=1
-# binary-linux-arm:
-# 	go build -o bin/$(GOOS)/$(GOARCH)/$(BIN_NAME) -v
+binary-linux-arm: export GOOS=linux
+binary-linux-arm: export GOARCH=arm
+binary-linux-arm: export GO15VENDOREXPERIMENT=1
+binary-linux-arm:
+	go build -o bin/$(GOOS)/$(GOARCH)/$(BIN_NAME) -v
 
 # cowardly unwilling to support other architectures for now
 # binary-freebsd-amd64: export GOOS=freebsd
